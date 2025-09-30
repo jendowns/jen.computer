@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>jen.computer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jen Downs" />
+    <meta name="description" content="jen's desktop and travel log" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <style>
+      /*
+        The FontStruction “MS Sans Serif”
+        (https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
+        under a Creative Commons Attribution Share Alike license
+        (http://creativecommons.org/licenses/by-sa/3.0/).
+      */
+      @font-face {
+        font-family: "MS Serif";
+        src: url("./fonts/ms_sans_serif.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #e5e5e5;
+        color: #000;
+        font-family: "MS Serif", "Lucida Console", Monaco, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        scrollbar-gutter: stable;
+      }
+
+      html,
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        height: 100vh;
+        margin: 0 auto;
+        min-height: 60vh;
+        place-self: center;
+        display: grid;
+        gap: 16px;
+      "
+    >
+      <main
+        style="max-width: 500px; place-self: center; display: grid; gap: 16px"
+      >
+        <h1 style="place-self: center; font-size: 48px; font-weight: bold">
+          404 error
+        </h1>
+        <span style="place-self: center">this page doesn't exist. :(</span>
+        <a href="/" style="place-self: center"> go home !! </a>
+        <video
+          className="email-video"
+          src="./videos/plink.mp4"
+          muted
+          playsinline
+          loop
+          autoplay
+          style="
+            place-self: center;
+            outline: 1px dotted #222;
+            outline-offset: 1px;
+            height: 200px;
+            width: 200px;
+          "
+        />
+      </main>
+    </div>
+  </body>
+</html>
