@@ -1,10 +1,11 @@
 import React from "react";
 
 export const Interstitial = ({ children }: { children: React.JSX.Element }) => {
-  const [showDesktop, setShowDesktop] = React.useState(false);
+  const [showDesktop, setShowDesktop] = React.useState(!!localStorage.getItem('hello-traveller'));
 
   const handleClick = () => {
     setShowDesktop(true);
+    localStorage.setItem("hello-traveller", "true");
   };
 
   if (!showDesktop) {
@@ -27,7 +28,11 @@ export const Interstitial = ({ children }: { children: React.JSX.Element }) => {
             viewed at desktop size.
           </span>
           <span>it also requires javascript to function.</span>
-          <button className="disclaimer-button" aria-label="ok got it (click to proceed to site)" onClick={handleClick}>
+          <button
+            className="disclaimer-button"
+            aria-label="ok got it (click to proceed to site)"
+            onClick={handleClick}
+          >
             ok got it
           </button>
         </div>
