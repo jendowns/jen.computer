@@ -1,6 +1,10 @@
 // import BskyFeed from "./components/windows/BskyFeed";
 import { EmailMe } from "./components/windows/EmailMe";
-import { /*ButterflyIcon,*/ CameraIcon, HeartIcon, MailIcon } from "./components/Icons";
+import {
+  /*ButterflyIcon,*/ CameraIcon,
+  HeartIcon,
+  MailIcon,
+} from "./components/Icons";
 import { CurrentStatus } from "./components/windows/CurrentStatus";
 import { Desktop } from "./components/Desktop";
 import { Interstitial } from "./components/Interstitial";

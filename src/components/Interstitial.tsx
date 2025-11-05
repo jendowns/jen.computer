@@ -1,7 +1,9 @@
 import React from "react";
 
 export const Interstitial = ({ children }: { children: React.JSX.Element }) => {
-  const [showDesktop, setShowDesktop] = React.useState(!!localStorage.getItem('hello-traveller'));
+  const [showDesktop, setShowDesktop] = React.useState(
+    !!localStorage.getItem("hello-traveller")
+  );
 
   const handleClick = () => {
     setShowDesktop(true);
@@ -10,13 +12,7 @@ export const Interstitial = ({ children }: { children: React.JSX.Element }) => {
 
   if (!showDesktop) {
     return (
-      <div
-        className="disclaimer-area"
-        style={{
-          backgroundImage: "url('./images/bliss.png')",
-          backgroundSize: "cover",
-        }}
-      >
+      <div className="disclaimer-area">
         <div className="disclaimer-card">
           <h1 style={{ textAlign: "center" }}>
             welcome, traveler
