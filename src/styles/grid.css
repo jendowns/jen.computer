@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid #a07ea0;
-  background-color: #fceae1;
+  background-color: #b9d3c6;
   box-sizing: content-box;
   position: relative;
-  background: linear-gradient(#b9d3c6, #ecdad6);
 }
 
 .jump-to {
@@ -76,10 +75,21 @@
   padding-right: 1.5rem;
 }
 
+.photo-blog-heading {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
 @media screen and (max-width: 600px) {
   .grid {
     display: flex;
     flex-direction: column;
+  }
+  .photo-blog-heading {
+    align-self: flex-start;
+    text-align: left;
   }
 }
 

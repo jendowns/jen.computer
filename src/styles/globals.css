@@ -24,12 +24,6 @@ body {
   scrollbar-gutter: stable;
 }
 
-#root {
-  background-image: url("./images/bliss.webp");
-  background-size: cover;
-  height: 100%;
-}
-
 html,
 body,
 #root {

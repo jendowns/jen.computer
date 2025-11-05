@@ -5,6 +5,7 @@ export default function PhotoBlog() {
   const viennaRef = React.useRef<HTMLDivElement>(null);
   const parisRef = React.useRef<HTMLDivElement>(null);
   const kyotoRef = React.useRef<HTMLDivElement>(null);
+  const scotlandRef = React.useRef<HTMLDivElement>(null);
 
   const handleJump = (ref: React.RefObject<HTMLDivElement | null>) =>
     ref.current?.scrollIntoView({
@@ -25,7 +26,7 @@ export default function PhotoBlog() {
             >
               Éire 24
             </button>
-            <span aria-hidden>{" //"}</span>
+            <span aria-hidden>{" |"}</span>
           </li>
           <li>
             <button
@@ -34,7 +35,7 @@ export default function PhotoBlog() {
             >
               Vienna 23
             </button>
-            <span aria-hidden>{" //"}</span>
+            <span aria-hidden>{" |"}</span>
           </li>
           <li>
             <button
@@ -43,7 +44,7 @@ export default function PhotoBlog() {
             >
               Paris 23
             </button>
-            <span aria-hidden>{" //"}</span>
+            <span aria-hidden>{" |"}</span>
           </li>
           <li>
             <button
@@ -51,6 +52,15 @@ export default function PhotoBlog() {
               onClick={() => handleJump(kyotoRef)}
             >
               Kyoto 23
+            </button>
+            <span aria-hidden>{" |"}</span>
+          </li>
+          <li>
+            <button
+              className="link-styled-button"
+              onClick={() => handleJump(scotlandRef)}
+            >
+              Scotland 19
             </button>
           </li>
         </ul>
@@ -62,23 +72,16 @@ export default function PhotoBlog() {
     <div className="grid-wrapper">
       {jumpMenu}
       <div className="grid grid-padding-top grid-green" ref={eireRef}>
-        <div
-          className="col0-2 row0-1"
-          style={{
-            textAlign: "right",
-            display: "flex",
-            flexDirection: "column",
-            alignSelf: "flex-end",
-          }}
-        >
-          <h1 style={{ fontSize: "2.5rem" }}>
+        <div className="col0-2 row0-1 photo-blog-heading">
+          <h2 style={{ fontSize: "2.5rem" }}>
             <em>Éire</em>
-          </h1>
+          </h2>
           <span style={{ fontSize: "0.9rem" }}>Spring 2024</span>
         </div>
         <div className="col2-2 row1-1">
           <span>
-            we drove across Ireland from Dublin to County Clare<br/>& stayed at Dromoland Castle.
+            we drove across Ireland from Dublin to County Clare
+            <br />& stayed at Dromoland Castle.
           </span>
           <br />
           <span></span>
@@ -107,29 +110,36 @@ export default function PhotoBlog() {
         >
           <span className="hide-on-mobile">Dromoland Castle ↑</span>
           <br className="hide-on-mobile" />
-          <span className="hide-on-mobile">The Cliffs of Moher →</span><br/><br/>
-          <span>looking over the Cliffs of Moher<br/>felt like being at the edge of the world.<br/>it was so beautiful and terrifying.</span>
+          <span className="hide-on-mobile">The Cliffs of Moher →</span>
+          <br />
+          <br />
+          <span>
+            looking over the Cliffs of Moher
+            <br />
+            felt like being at the edge of the world.
+            <br />
+            it was so beautiful and terrifying.
+          </span>
         </div>
       </div>
       <div className="grid grid-padding-top grid-bluegray" ref={viennaRef}>
-        <div
-          className="col0-2 row0-1"
-          style={{
-            textAlign: "right",
-            display: "flex",
-            flexDirection: "column",
-            alignSelf: "flex-end",
-          }}
-        >
-          <h1 style={{ fontSize: "2.5rem" }}>
+        <div className="col0-2 row0-1 photo-blog-heading">
+          <h2 style={{ fontSize: "2.5rem" }}>
             <em>Vienna</em>
-          </h1>
+          </h2>
           <span style={{ fontSize: "0.9rem" }}>Winter 2023</span>
         </div>
         <div className="col2-2 row1-2">
           <span>
-            we spent our time marvelling at art & architecture<br/>and riding trains.
-            <br/><br/>we saw Klimt (!!) at Upper Belvedere Palace<br/>and so many incredible medieval pieces in the Lower Belvedere gallery.
+            we spent our time marvelling at art & architecture
+            <br />
+            and riding trains.
+            <br />
+            <br />
+            we saw Klimt (!!) at Upper Belvedere Palace
+            <br />
+            and so many incredible medieval pieces in the Lower Belvedere
+            gallery.
           </span>
         </div>
       </div>
@@ -158,30 +168,26 @@ export default function PhotoBlog() {
             loading="lazy"
           />
         </div>
-        <div className="col1-2 row3-1 hide-on-mobile" style={{ textAlign: "right" }}>
+        <div
+          className="col1-2 row3-1 hide-on-mobile"
+          style={{ textAlign: "right" }}
+        >
           <span>Tram transportation in Vienna ↑</span>
           <br />
           <span>Marble Hall, Upper Belvedere Palace →</span>
         </div>
       </div>
       <div className="grid grid-padding-top grid-yellow" ref={parisRef}>
-        <div
-          className="col0-2 row0-1"
-          style={{
-            textAlign: "right",
-            display: "flex",
-            flexDirection: "column",
-            alignSelf: "flex-end",
-          }}
-        >
-          <h1 style={{ fontSize: "2.5rem" }}>
+        <div className="col0-2 row0-1 photo-blog-heading">
+          <h2 style={{ fontSize: "2.5rem" }}>
             <em>Paris</em>
-          </h1>
+          </h2>
           <span style={{ fontSize: "0.9rem" }}>Winter 2023</span>
         </div>
         <div className="col2-2 row1-1">
           <span>
-            we didn't spend much time in Paris, unfortunately. but these rooftop views from our hotel balcony were so beautiful.
+            we didn't spend much time in Paris, unfortunately. but these rooftop
+            views from our hotel balcony were so beautiful.
           </span>
         </div>
       </div>
@@ -205,30 +211,31 @@ export default function PhotoBlog() {
         <div className="col2-2 row3-2 grid-caption">
           <span className="hide-on-mobile">↑ rooftops over Paris</span>
           <br className="hide-on-mobile" />
-          <span className="hide-on-mobile">← and look! more rooftops over Paris</span>
-          <br/><br/>it made me feel so small to look across an <em>old</em> city like Paris. i was overwhelmed thinking about how much history had taken place in these streets, in these buildings, in this city.
+          <span className="hide-on-mobile">
+            ← and look! more rooftops over Paris
+          </span>
+          <br />
+          <br />
+          it made me feel so small to look across an <em>old</em> city like
+          Paris. i was overwhelmed thinking about how much history had taken
+          place in these streets, in these buildings, in this city.
         </div>
       </div>
       <div className="grid grid-padding-top grid-orange" ref={kyotoRef}>
-        <div
-          className="col0-2 row0-1"
-          style={{
-            textAlign: "right",
-            display: "flex",
-            flexDirection: "column",
-            alignSelf: "flex-end",
-          }}
-        >
-          <h1 style={{ fontSize: "2.5rem" }}>
+        <div className="col0-2 row0-1 photo-blog-heading">
+          <h2 style={{ fontSize: "2.5rem" }}>
             <em>Kyoto</em>
-          </h1>
+          </h2>
           <span style={{ fontSize: "0.9rem" }}>Fall 2023</span>
         </div>
         <div className="col2-2 row1-1">
-          <span>we stayed in the historic Higashiyama district and took trains to explore Kyoto, including Nijō Castle and the Arashiyama district.</span>
+          <span>
+            we stayed in the historic Higashiyama district and took trains to
+            explore Kyoto, including Nijō Castle and the Arashiyama district.
+          </span>
         </div>
       </div>
-      <div className="grid grid-orange" style={{ paddingBottom: '1rem' }}>
+      <div className="grid grid-orange" style={{ paddingBottom: "1rem" }}>
         <div className="col0-3 row0-3">
           <img
             src="./images/kyoto-temple.webp"
@@ -245,7 +252,10 @@ export default function PhotoBlog() {
             loading="lazy"
           />
         </div>
-        <div className="col1-2 row3-1 hide-on-mobile" style={{ textAlign: "right" }}>
+        <div
+          className="col1-2 row3-1 hide-on-mobile"
+          style={{ textAlign: "right" }}
+        >
           <span>Niomon gate, Kiyomizu-dera ↑</span>
           <br />
           <span>Katsura River bend →</span>
@@ -260,9 +270,55 @@ export default function PhotoBlog() {
             loading="lazy"
           />
         </div>
-        <div className="col4-1 row0-1 hide-on-mobile" style={{ textAlign: "left" }}>
-          <span>← Toketsukyo Bridge,<br/>Katsura River</span><br/>
-          <br/><span>(pictured) three teenagers took their row boat a little too close to the bridge, and an older man rushed over to redirect them.</span>
+        <div
+          className="col4-1 row0-1 hide-on-mobile"
+          style={{ textAlign: "left" }}
+        >
+          <span>
+            ← Toketsukyo Bridge,
+            <br />
+            Katsura River
+          </span>
+          <br />
+          <br />
+          <span>
+            (pictured) three teenagers took their row boat a little too close to
+            the bridge, and an older man rushed over to redirect them.
+          </span>
+        </div>
+      </div>
+      <div className="grid grid-padding-top grid-green" ref={scotlandRef}>
+        <div className="col0-2 row0-1 photo-blog-heading">
+          <h2 style={{ fontSize: "2.5rem" }}>
+            <em>Scotland</em>
+          </h2>
+          <span style={{ fontSize: "0.9rem" }}>Spring 2019</span>
+        </div>
+        <div className="col2-2 row1-1">
+          <span>
+            we stayed in Inverness and then drove up to Loch Ness and Glencoe to hike around the moorland. 
+          </span>
+        </div>
+      </div>
+      <div className="grid grid-padding-bottom grid-green">
+        <div className="col2-3 row0-3">
+          <img
+            src="./images/glencoe.webp"
+            style={{ objectPosition: "center bottom" }}
+            alt="The Cliffs of Moher stretch far into the distance. The sheerness of the cliffs drop to the ocean below. The edge of the cliff is full of deep green grass and moss. There's a structure in the distance; it looks like a singular lookout tower, painted white."
+            loading="eager"
+          />
+        </div>
+        <div
+          className="col0-2 row1-2 grid-caption"
+          style={{ textAlign: "right" }}
+        >
+          <span className="hide-on-mobile">Glencoe →</span>
+          <br />
+          <br />
+          <span>
+            I didn't have a fancy camera for this trip, so unfortunately this muddied shot from my iphone SE doesn't do this scenery nearly enough justice. this valley near Ballachulish was breathtaking.
+          </span>
         </div>
       </div>
 
