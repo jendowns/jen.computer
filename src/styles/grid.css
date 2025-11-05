@@ -1,0 +1,284 @@
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #a07ea0;
+  background-color: #fceae1;
+  box-sizing: content-box;
+  position: relative;
+  background: linear-gradient(#b9d3c6, #ecdad6);
+}
+
+.jump-to {
+  position: sticky;
+  display: flex;
+  top: 0px;
+  font-size: 0.8rem;
+  background-color: transparent;
+}
+
+.jump-to > div {
+  display: flex;
+  background-color: white;
+  border-bottom: 1px dotted #a07ea0;
+  border-right: 1px dotted #a07ea0;
+  padding: 2px 5px;
+  border-bottom-right-radius: 4px;
+}
+
+.notes {
+  position: sticky;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notes > span {
+  padding: 2px 5px;
+  font-size: 0.8rem;
+  background-color: white;
+  border-top: 1px dotted #a07ea0;
+  border-left: 1px dotted #a07ea0;
+  border-top-left-radius: 4px;
+}
+
+.jump-to ul {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+
+.jump-to button {
+  line-height: 0.9rem;
+}
+
+.grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 0;
+  border: none;
+}
+.grid {
+  width: "100%";
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 8em;
+  grid-auto-rows: 8em;
+  grid-auto-flow: row;
+  grid-gap: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.grid-padding-top {
+  padding-top: 2rem;
+}
+
+.grid-padding-bottom {
+  padding-bottom: 2rem;
+}
+
+.grid-green {
+  background-color: #b9d3c6;
+}
+.grid-yellow {
+  background-color: rgb(252, 234, 225);
+}
+.grid-bluegray {
+  background-color: #d1dde8;
+}
+.grid-orange {
+  background-color: #ecdad6;
+}
+
+.grid .col0-1 {
+  grid-column: 1 / span 1;
+}
+.grid .row0-1 {
+  grid-row: 1 / span 1;
+}
+.grid .col1-1 {
+  grid-column: 2 / span 1;
+}
+.grid .row1-1 {
+  grid-row: 2 / span 1;
+}
+.grid .col2-1 {
+  grid-column: 3 / span 1;
+}
+.grid .row2-1 {
+  grid-row: 3 / span 1;
+}
+.grid .col3-1 {
+  grid-column: 4 / span 1;
+}
+.grid .row3-1 {
+  grid-row: 4 / span 1;
+}
+.grid .col4-1 {
+  grid-column: 5 / span 1;
+}
+.grid .row4-1 {
+  grid-row: 5 / span 1;
+}
+.grid .col5-1 {
+  grid-column: 6 / span 1;
+}
+.grid .row5-1 {
+  grid-row: 6 / span 1;
+}
+.grid .col0-2 {
+  grid-column: 1 / span 2;
+}
+.grid .row0-2 {
+  grid-row: 1 / span 2;
+}
+.grid .col1-2 {
+  grid-column: 2 / span 2;
+}
+.grid .row1-2 {
+  grid-row: 2 / span 2;
+}
+.grid .col2-2 {
+  grid-column: 3 / span 2;
+}
+.grid .row2-2 {
+  grid-row: 3 / span 2;
+}
+.grid .col3-2 {
+  grid-column: 4 / span 2;
+}
+.grid .row3-2 {
+  grid-row: 4 / span 2;
+}
+.grid .col4-2 {
+  grid-column: 5 / span 2;
+}
+.grid .row4-2 {
+  grid-row: 5 / span 2;
+}
+.grid .col5-2 {
+  grid-column: 6 / span 2;
+}
+.grid .row5-2 {
+  grid-row: 6 / span 2;
+}
+
+.grid .col0-3 {
+  grid-column: 1 / span 3;
+}
+.grid .row0-3 {
+  grid-row: 1 / span 3;
+}
+.grid .col1-3 {
+  grid-column: 2 / span 3;
+}
+.grid .row1-3 {
+  grid-row: 2 / span 3;
+}
+.grid .col2-3 {
+  grid-column: 3 / span 3;
+}
+.grid .row2-3 {
+  grid-row: 3 / span 3;
+}
+.grid .col3-3 {
+  grid-column: 4 / span 3;
+}
+.grid .row3-3 {
+  grid-row: 4 / span 3;
+}
+.grid .col4-3 {
+  grid-column: 5 / span 3;
+}
+.grid .row4-3 {
+  grid-row: 5 / span 3;
+}
+.grid .col5-3 {
+  grid-column: 6 / span 3;
+}
+.grid .row5-3 {
+  grid-row: 6 / span 3;
+}
+.grid .col0-4 {
+  grid-column: 1 / span 4;
+}
+.grid .row0-4 {
+  grid-row: 1 / span 4;
+}
+.grid .col1-4 {
+  grid-column: 2 / span 4;
+}
+.grid .row1-4 {
+  grid-row: 2 / span 4;
+}
+.grid .col2-4 {
+  grid-column: 3 / span 4;
+}
+.grid .row2-4 {
+  grid-row: 3 / span 4;
+}
+.grid .col3-4 {
+  grid-column: 4 / span 4;
+}
+.grid .row3-4 {
+  grid-row: 4 / span 4;
+}
+.grid .col4-4 {
+  grid-column: 5 / span 4;
+}
+.grid .row4-4 {
+  grid-row: 5 / span 4;
+}
+.grid .col5-4 {
+  grid-column: 6 / span 4;
+}
+.grid .row5-4 {
+  grid-row: 6 / span 4;
+}
+.grid .row0-5 {
+  grid-row: 1 / span 5;
+}
+.grid .col1-5 {
+  grid-column: 2 / span 5;
+}
+.grid .row1-5 {
+  grid-row: 2 / span 5;
+}
+.grid .col2-5 {
+  grid-column: 3 / span 5;
+}
+.grid .row2-5 {
+  grid-row: 3 / span 5;
+}
+.grid .col3-5 {
+  grid-column: 4 / span 5;
+}
+.grid .row3-5 {
+  grid-row: 4 / span 5;
+}
+.grid .col4-5 {
+  grid-column: 5 / span 5;
+}
+.grid .row4-5 {
+  grid-row: 5 / span 5;
+}
+.grid .col5-5 {
+  grid-column: 6 / span 5;
+}
+.grid .row5-5 {
+  grid-row: 6 / span 5;
+}

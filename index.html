@@ -1,81 +1,14 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
   <head>
-    <title>jen.computer</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Jen Downs" />
+    <title>jen.computer</title>
     <meta name="description" content="jen's desktop and travel log" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <style>
-      /*
-        The FontStruction “MS Sans Serif”
-        (https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
-        under a Creative Commons Attribution Share Alike license
-        (http://creativecommons.org/licenses/by-sa/3.0/).
-      */
-      @font-face {
-        font-family: "MS Serif";
-        src: url("./fonts/ms_sans_serif.woff2") format("woff2");
-        font-weight: normal;
-        font-display: swap;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        background-color: #e5e5e5;
-        color: #000;
-        font-family: "MS Serif", "Lucida Console", Monaco, -apple-system,
-          BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
-          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        scrollbar-gutter: stable;
-      }
-
-      html,
-      body {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-    </style>
   </head>
   <body>
-    <div
-      style="
-        height: 100vh;
-        margin: 0 auto;
-        min-height: 60vh;
-        place-self: center;
-        display: grid;
-        gap: 16px;
-      "
-    >
-      <main
-        style="max-width: 500px; place-self: center; display: grid; gap: 16px"
-      >
-        <h1 style="place-self: center; font-size: 48px; font-weight: bold">
-          offline!!
-        </h1>
-        <span style="place-self: center">i've taken this site down while i move it off of Next.js (🤢)</span>
-        <video
-          className="email-video"
-          src="./videos/plink.mp4"
-          muted
-          playsinline
-          loop
-          autoplay
-          style="
-            place-self: center;
-            outline: 1px dotted #222;
-            outline-offset: 1px;
-            height: 200px;
-            width: 200px;
-          "
-        />
-      </main>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
