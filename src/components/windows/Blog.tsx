@@ -20,7 +20,7 @@ export const Blog = () => {
         <div className="pika-loading-wrapper"
         >
           <img src="./images/pika.webp" className="pika-loading" alt="" />
-          <span>Loading...</span>
+          <span><em>loading <u>https://jen.dev/</u></em></span>
         </div>
       )}
       <iframe
@@ -29,7 +29,7 @@ export const Blog = () => {
         width="100%"
         height="100%"
         ref={iframeRef}
-        onLoad={() => setTimeout(() => setIsIFrameLoaded(true), 1200)}
+        onLoad={() => setTimeout(() => setIsIFrameLoaded(true), 1500)}
       />
     </div>
   );

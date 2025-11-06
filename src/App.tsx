@@ -49,7 +49,7 @@ export default function Homepage() {
             title: "my blog",
             view: "blog",
             windowContents: <Blog />,
-            icon: <CameraIcon />,
+            icon: <img src="./images/huh.jpg" alt="favicon for my blog website, jen.dev" />,
           },
         }}
       />

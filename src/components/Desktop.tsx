@@ -44,31 +44,38 @@ export const Desktop = ({
     }
   }, [isMobile]);
 
-  const showWindow = React.useCallback((id: string) => {
-    if (isMobile) {
-      setVisibleWindowIds([id]);
-    } else {
-      setVisibleWindowIds((prev) => [...prev, id]);
-    }
-  }, [isMobile]);
+  const showWindow = React.useCallback(
+    (id: string) => {
+      if (isMobile) {
+        setVisibleWindowIds([id]);
+      } else {
+        setVisibleWindowIds((prev) => [...prev, id]);
+        const currentActive = document.querySelector(".active");
+        currentActive?.classList.remove("active");
+        document.getElementById(id)?.classList.add("active");
+      }
+    },
+    [isMobile]
+  );
 
-  const hideWindow = React.useCallback((id: string) => {
-    if (isMobile) {
-      setVisibleWindowIds([]);
-    } else {
-      setVisibleWindowIds((prev) => [
-        ...prev.slice(0, prev.indexOf(id)),
-        ...prev.slice(prev.indexOf(id) + 1),
-      ]);
-    }
-  }, [isMobile]);
+  const hideWindow = React.useCallback(
+    (id: string) => {
+      if (isMobile) {
+        setVisibleWindowIds([]);
+      } else {
+        setVisibleWindowIds((prev) => [
+          ...prev.slice(0, prev.indexOf(id)),
+          ...prev.slice(prev.indexOf(id) + 1),
+        ]);
+      }
+    },
+    [isMobile]
+  );
 
   const bringToFront = React.useCallback((id: string) => {
-    setVisibleWindowIds((prev) => [
-      ...prev.slice(0, prev.indexOf(id)),
-      ...prev.slice(prev.indexOf(id) + 1),
-      id,
-    ]);
+    const currentActive = document.querySelector(".active");
+    currentActive?.classList.remove("active");
+    document.getElementById(id)?.classList.add("active");
   }, []);
 
   return (
@@ -106,4 +113,3 @@ export const Desktop = ({
   );
 };
 export { DesktopContext };
-

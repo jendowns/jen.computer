@@ -132,9 +132,17 @@ button:focus {
 
 .toggle-button svg {
   color: black;
+  width: 40px;
+  height: 40px;
+}
+
+.toggle-button img {
+  width: 48px;
+  height: 48px;
 }
 
 .toggle-button > span {
+  display: inline;
   background-color: white;
   padding: 2px 4px;
   color: black;
@@ -660,4 +668,23 @@ button:focus {
 .pika-loading {
   max-width: 150px;
   border: none !important;
+}
+
+.window-outer {
+  &:first-of-type {
+    z-index: 1234;
+  }
+  &:nth-of-type(2) {
+    z-index: 1235;
+  }
+  &:nth-of-type(3) {
+    z-index: 12346;
+  }
+  &:nth-of-type(4) {
+    z-index: 12347;
+  }
+}
+
+.active {
+  z-index: 999999999999 !important;
 }
