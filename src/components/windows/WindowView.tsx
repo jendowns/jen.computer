@@ -2,7 +2,7 @@ import React, { type CSSProperties, useContext, useRef } from "react";
 import { CloseIcon } from "../Icons";
 import { DesktopContext } from "../DesktopContext";
 
-export type ViewType = "bsky" | "email" | "status" | "photos";
+export type ViewType = "bsky" | "email" | "status" | "photos" | "blog";
 
 const clamp = (value: number, min: number, max: number) => {
   if (value < min) return min;
@@ -39,18 +39,27 @@ export const WindowView = ({
     email: {
       innerStyles: {
         width: "100%",
+        minWidth: "93vw",
       },
     },
     status: {
       innerStyles: {
         width: "100%",
+        minWidth: "93vw",
       },
     },
     photos: {
       innerStyles: {
         width: "100%",
+        minWidth: "93vw",
         maxWidth: "auto",
-        minWidth: "auto",
+      },
+    },
+    blog: {
+      innerStyles: {
+        width: "100%",
+        minWidth: "93vw",
+        maxWidth: "auto",
       },
     },
   };
@@ -82,6 +91,12 @@ export const WindowView = ({
         maxHeight: "900px",
       },
     },
+    blog: {
+      innerStyles: {
+        width: "675px",
+        maxHeight: "800px",
+      },
+    },
   };
 
   const { bringToFront } = useContext(DesktopContext);
@@ -109,6 +124,7 @@ export const WindowView = ({
       };
     }
     setPosition(newPosition);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile]);
 
   if (isMobile) {
@@ -139,6 +155,12 @@ export const WindowView = ({
     },
     photos: {
       innerStyles: {},
+    },
+    blog: {
+      innerStyles: {
+        backgroundColor: "white",
+        height: "675px",
+      },
     },
   };
 

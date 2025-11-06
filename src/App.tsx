@@ -1,5 +1,6 @@
 // import BskyFeed from "./components/windows/BskyFeed";
 import { EmailMe } from "./components/windows/EmailMe";
+import { Blog } from "./components/windows/Blog";
 import {
   /*ButterflyIcon,*/ CameraIcon,
   HeartIcon,
@@ -41,6 +42,13 @@ export default function Homepage() {
             title: "travel photos & notes",
             view: "photos",
             windowContents: <PhotoBlog />,
+            icon: <CameraIcon />,
+          },
+          blog: {
+            id: "blog",
+            title: "my blog",
+            view: "blog",
+            windowContents: <Blog />,
             icon: <CameraIcon />,
           },
         }}
