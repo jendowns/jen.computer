@@ -1,11 +1,6 @@
 // import BskyFeed from "./components/windows/BskyFeed";
 import { EmailMe } from "./components/windows/EmailMe";
 import { Blog } from "./components/windows/Blog";
-import {
-  /*ButterflyIcon,*/ CameraIcon,
-  HeartIcon,
-  MailIcon,
-} from "./components/Icons";
 import { CurrentStatus } from "./components/windows/CurrentStatus";
 import { Desktop } from "./components/Desktop";
 import { Interstitial } from "./components/Interstitial";
@@ -21,7 +16,7 @@ export default function Homepage() {
             title: "current status",
             view: "status",
             windowContents: <CurrentStatus />,
-            icon: <HeartIcon />,
+            icon: <img src="./images/winxp-star.png" alt="star icon" />,
           },
           // bsky: {
           //   id: "bsky",
@@ -35,14 +30,14 @@ export default function Homepage() {
             title: "email me",
             view: "email",
             windowContents: <EmailMe />,
-            icon: <MailIcon />,
+            icon: <img src="./images/winxp-globe.png" alt="globe icon" />,
           },
           photos: {
             id: "photos",
-            title: "travel photos & notes",
+            title: "travel photos",
             view: "photos",
             windowContents: <PhotoBlog />,
-            icon: <CameraIcon />,
+            icon: <img src="./images/winxp-camera.png" alt="camera icon" />,
           },
           blog: {
             id: "blog",

@@ -55,23 +55,26 @@ a:hover,
 }
 
 .window {
-  padding: 0.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
 }
 
 .window-outer {
   position: absolute;
   display: flex;
-  border: 1px solid #a07ea0;
-  border-radius: 4px;
+  flex-grow: 1;
   box-sizing: border-box;
-  background-color: #f0e0f0;
   color: rgb(10, 10, 10);
   align-self: center;
-  box-shadow: inset 1px 1px 0 1px #fefefe75, inset -1px -1px #d0abd0e0,
-    2px 2px 5px #83748345;
   z-index: 2;
+  background-color: #005bff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .window-outer#bsky {
@@ -81,10 +84,22 @@ a:hover,
 
 .window-inner {
   position: relative;
-  box-sizing: content-box;
   overflow: hidden;
-  border: 1px solid #a07ea0;
   background-size: cover;
+  border-left: 3px solid #0831d9;
+  border-right: 3px solid #0831d9;
+  border-bottom: 3px solid #0831d9;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+
+iframe {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .window-inner-scroll {
@@ -99,8 +114,7 @@ img,
 canvas,
 .video-button-wrapper {
   width: 100%;
-  border: 1px dotted #a07ea0;
-  border-radius: 4px;
+  border: 1px dotted #333;
 }
 
 .post-list {
@@ -139,6 +153,7 @@ button:focus {
 .toggle-button img {
   width: 48px;
   height: 48px;
+  border: none;
 }
 
 .toggle-button > span {
@@ -193,7 +208,25 @@ button:focus {
   flex-direction: row;
   justify-content: space-between;
   height: auto;
-  padding-bottom: 4px;
+  padding: 0.5rem;
+  background: linear-gradient(
+    180deg,
+    #0997ff,
+    #0053ee 8%,
+    #0050ee 40%,
+    #06f 88%,
+    #06f 93%,
+    #005bff 95%,
+    #003dd7 96%,
+    #003dd7
+  );
+  border-top: 1px solid #0831d9;
+  border-left: 1px solid #0831d9;
+  border-right: 1px solid #0831d9;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .window-title {
@@ -204,7 +237,8 @@ button:focus {
   display: flex;
   gap: 10px;
   align-self: center;
-  text-shadow: 1px 1px white;
+  text-shadow: 1px 1px black;
+  color: white;
 }
 
 .post-wrapper {
@@ -330,7 +364,7 @@ button:focus {
   justify-content: center;
   flex-direction: column;
   align-content: center;
-  align-self: flex-end;
+  align-self: flex-start;
   gap: 16px;
 }
 
@@ -409,24 +443,21 @@ button:focus {
 /* TODO: genericize this  */
 .window-3d-button {
   position: relative;
-  border: 1px solid #a07ea0;
-  /* box-shadow: 2px 2px #e0cde0; */
-  box-shadow: #f5e7f5eb 1px 1px 0px 1px inset,
-    rgba(208, 171, 208, 0.88) -1px -1px inset,
-    rgba(131, 116, 131, 0.27) 1px 1px 2px;
-  border-radius: 4px;
-  background: #fff;
   display: flex;
   flex-direction: row;
   align-self: flex-end;
   padding: 4px;
-  min-width: 32px;
   justify-content: center;
   animation: 200ms ease-in background-color;
+  background: #e76f54;
+  border: 1px solid white;
+  border-radius: 3px;
+  box-shadow: -2px -2px inset #bf3b18, 2px 2px inset #f0a795;
+  color: white;
 }
 
 .window-3d-button:hover {
-  background-color: #f3eff3;
+  background-color: rgb(220, 84, 53);
 }
 
 .window-3d-button:active,
@@ -464,7 +495,7 @@ button:focus {
   color: #fff;
   z-index: 1;
   background-color: #000;
-  margin: .5rem;
+  margin: 0.5rem;
   padding: 2px 8px;
   display: flex;
   position: absolute;
@@ -559,13 +590,8 @@ button:focus {
 .disclaimer-card {
   padding: 24px 16px;
   width: 275px;
-
-  /* Reference: Josh Comeau https://codepen.io/joshwcomeau/pen/VwRqQGP */
-  --radius: 4px;
-  background-image: radial-gradient( var(--radius), transparent 98%, white ), linear-gradient(white 0 0);
-  background-repeat: round, no-repeat;
-  background-position: calc(var(--radius) * -1.5) calc(var(--radius) * -1.5), 50%;
-  background-size: calc(var(--radius) * 3) calc(var(--radius) * 3), calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
+  background-color: white;
+  border: 3px solid #0831d9;
 }
 
 .disclaimer-button {
@@ -586,9 +612,8 @@ button:focus {
 .toolbar,
 .footer {
   display: flex;
-  color: black;
-  background-color: #f1e7f1;
-  padding: 4px 16px;
+  /* background-color: #f1e7f1; */
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -599,8 +624,20 @@ button:focus {
 }
 
 .toolbar {
-  box-shadow: inset -1px -1px #e0d3e0e0, 2px 2px 5px #98929845;
-  border-bottom: 1px solid #a07ea0;
+  background: linear-gradient(
+    180deg,
+    #0997ff,
+    #0053ee 8%,
+    #0050ee 40%,
+    #06f 88%,
+    #06f 93%,
+    #005bff 95%,
+    #003dd7 96%,
+    #003dd7
+  );
+  border-top: 1px solid #0831d9;
+  /* box-shadow: inset 1px 1px #e0d3e0e0, 2px 2px 5px #98929845;
+  border-top: 1px solid #a07ea0; */
   flex-wrap: wrap;
   user-select: none;
 }
@@ -610,16 +647,43 @@ button:focus {
   display: flex;
   flex-direction: row;
   gap: 12px;
+  padding: 8px 16px;
 }
 
 .footer-segment a {
   background-color: white;
 }
 
+.toolbar-segment:first-of-type span {
+  font-size: 1rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.toolbar-segment:last-of-type {
+  background: linear-gradient(
+    180deg,
+    #56b3ef,
+    #418de5 8%,
+    #4088e0 40%,
+    #499de7 88%,
+    #4ba5ed 93%,
+    #56b3ef 95%,
+    #4ba5ed 96%,
+    #003dd7
+  );
+  border-left: 1px solid #0831d9;
+  span {
+    min-width: 130px;
+  }
+}
+
 .toolbar span,
 .footer span {
   font-size: 0.95rem;
   align-self: center;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
 .about-icon {

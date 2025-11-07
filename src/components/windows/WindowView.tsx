@@ -31,70 +31,84 @@ export const WindowView = ({
 }: IWindowViewProps) => {
   const mobileWidths = {
     bsky: {
-      innerStyles: {
-        width: "100%",
-        height: "80vh",
-      },
+      outterStyles: {},
+      innerStyles: {},
     },
     email: {
-      innerStyles: {
+      outterStyles: {
         width: "100%",
-        minWidth: "93vw",
+        maxWidth: "97vw",
       },
+      innerStyles: {},
     },
     status: {
-      innerStyles: {
+      outterStyles: {
         width: "100%",
-        minWidth: "93vw",
+        maxWidth: "97vw",
       },
+      innerStyles: {},
     },
     photos: {
-      innerStyles: {
+      outterStyles: {
         width: "100%",
-        minWidth: "93vw",
-        maxWidth: "auto",
+        maxWidth: "97vw",
+        height: '97%',
       },
+      innerStyles: {},
     },
     blog: {
-      innerStyles: {
+      outterStyles: {
         width: "100%",
-        minWidth: "93vw",
-        maxWidth: "auto",
+        maxWidth: "97vw",
+        height: '97%',
       },
+      innerStyles: {},
     },
   };
 
   const desktopWidths = {
     bsky: {
+      outterStyles: {},
       innerStyles: {
         width: "500px",
         maxHeight: "700px",
       },
     },
     email: {
+      outterStyles: {},
       innerStyles: {
         width: "350px",
       },
     },
     status: {
+      outterStyles: {},
       innerStyles: {
         width: "375px",
         maxHeight: "600px",
       },
     },
     photos: {
+      outterStyles: {
+        width: '100%',
+        maxWidth: '1000px',
+        height: '100%',
+        maxHeight: "70vh",
+      },
       innerStyles: {
-        width: "70vw",
-        maxWidth: "1200px",
-        minWidth: "700px",
-        height: "70vh",
-        maxHeight: "900px",
+        width: '100%',
+        height: '100%',
       },
     },
     blog: {
+      outterStyles: {
+        width: '100%',
+        maxWidth: '600px',
+        height: '100%',
+        maxHeight: "70vh",
+      },
       innerStyles: {
-        width: "675px",
-        maxHeight: "800px",
+        width: '100%',
+        height: '100%',
       },
     },
   };
@@ -136,30 +150,36 @@ export const WindowView = ({
   // TODO: clean this up, move
   const views = {
     bsky: {
+      outterStyles: {},
       innerStyles: {
         backgroundImage:
           "linear-gradient( 90deg, rgba(71, 71, 71, 0.1), rgba(71, 71, 71, 0.1) ), url('./images/dithered-sky.png')",
       },
     },
     email: {
+      outterStyles: {},
       innerStyles: {
         backgroundColor: "white",
         height: "auto",
       },
     },
     status: {
+      outterStyles: {},
       innerStyles: {
         backgroundColor: "white",
         height: "380px",
       },
     },
     photos: {
+      outterStyles: {},
       innerStyles: {},
     },
     blog: {
+      outterStyles: {
+        height: "100%",
+      },
       innerStyles: {
         backgroundColor: "white",
-        height: "675px",
       },
     },
   };
@@ -274,7 +294,7 @@ export const WindowView = ({
       id={id}
       className="window-outer"
       ref={windowElemRef}
-      style={{ ...position }}
+      style={{ ...position, ...views[view].outterStyles, ...sizes[view].outterStyles}}
       onClick={() => {
         bringToFront(id);
       }}

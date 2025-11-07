@@ -4,7 +4,7 @@ export const Toolbar = () => {
   const [time, setTime] = React.useState<string>();
 
   React.useEffect(() => {
-    setInterval(() => {
+    const getDate = () => {
       const date = new Date().toLocaleString("en-US", {
         timeZone: "America/Los_Angeles",
         weekday: "short",
@@ -15,19 +15,16 @@ export const Toolbar = () => {
         timeZoneName: "short",
       });
       setTime(date);
+    };
+    getDate();
+    setInterval(() => {
+      getDate();
     }, 5000);
   }, []);
 
   return (
     <div className="toolbar">
       <div className="toolbar-segment">
-        <img
-          src="./favicon.ico"
-          alt=""
-          width="24px"
-          height="24px"
-          className="about-icon"
-        />
         <span>jen.computer</span>
       </div>
       <div className="toolbar-segment">

@@ -5,7 +5,6 @@ import {
 } from "./ToggleWindowButton";
 import { WindowView } from "./windows/WindowView";
 import { Toolbar } from "./Toolbar";
-import { Footer } from "./Footer";
 import { DesktopContext } from "./DesktopContext";
 
 export const Desktop = ({
@@ -13,9 +12,7 @@ export const Desktop = ({
 }: {
   childWindows: { [id: string]: IToggleWindowButtonProps };
 }) => {
-  const [visibleWindowIds, setVisibleWindowIds] = useState<string[]>([
-    "status",
-  ]);
+  const [visibleWindowIds, setVisibleWindowIds] = useState<string[]>([]);
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -80,7 +77,6 @@ export const Desktop = ({
 
   return (
     <>
-      <Toolbar />
       <DesktopContext.Provider
         value={{ visibleWindowIds, showWindow, hideWindow, bringToFront }}
       >
@@ -92,23 +88,24 @@ export const Desktop = ({
               ))}
             </div>
             <div className="desktop-window-area">
-              {visibleWindowIds.map((id) => (
-                <WindowView
-                  key={id}
-                  id={id}
-                  contents={childWindows[id].windowContents}
-                  onClose={() => hideWindow(id)}
-                  total={visibleWindowIds.length}
-                  title={childWindows[id].title}
-                  view={childWindows[id].view}
-                  isMobile={isMobile}
-                />
-              ))}
+          {visibleWindowIds[0] &&
+            visibleWindowIds?.map((id) => (
+              <WindowView
+                key={id}
+                id={id}
+                contents={childWindows[id].windowContents}
+                onClose={() => hideWindow(id)}
+                total={visibleWindowIds.length}
+                title={childWindows[id].title}
+                view={childWindows[id].view}
+                isMobile={isMobile}
+              />
+            ))}
             </div>
           </div>
         </main>
       </DesktopContext.Provider>
-      <Footer />
+      <Toolbar />
     </>
   );
 };
