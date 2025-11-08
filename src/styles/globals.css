@@ -599,6 +599,12 @@ button:focus {
   padding: 8px 16px;
 }
 
+.toolbar-segment:first-of-type {
+  border-radius: 0px 10px 12px 0px;
+  box-shadow: 0px 5px 10px #79ce71 inset, 1px 1px 3px #222;
+  background: radial-gradient(circle, #249F27 0%, #307F3C 100%) center/cover no-repeat;
+}
+
 .toolbar-segment:first-of-type span {
   font-size: 1rem;
   font-weight: 700;
@@ -618,9 +624,6 @@ button:focus {
     #003dd7
   );
   border-left: 1px solid #0831d9;
-  span {
-    min-width: 130px;
-  }
 }
 
 .toolbar span {

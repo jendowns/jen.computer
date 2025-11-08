@@ -30,15 +30,15 @@ export const WindowView = ({
   isMobile,
 }: IWindowViewProps) => {
   const mobilePosition = {
-    position: 'absolute' as const,
-    top: '10px',
+    position: "absolute" as const,
+    top: "10px",
     left: 0,
     right: 0,
-  }
+  };
   const mobileWidths = {
     bsky: {
       outerStyles: {
-        ...mobilePosition
+        ...mobilePosition,
       },
       innerStyles: {},
     },
@@ -47,7 +47,7 @@ export const WindowView = ({
         ...mobilePosition,
         width: "100%",
         maxWidth: "97vw",
-        backgroundColor: '#ede9d9',
+        backgroundColor: "#ede9d9",
       },
       innerStyles: {},
     },
@@ -56,7 +56,7 @@ export const WindowView = ({
         ...mobilePosition,
         width: "100%",
         maxWidth: "97vw",
-        backgroundColor: '#f9f8f4',
+        backgroundColor: "#f9f8f4",
         height: "97%",
       },
       innerStyles: {},
@@ -84,12 +84,11 @@ export const WindowView = ({
         ...mobilePosition,
         width: "100%",
         maxWidth: "97vw",
-        backgroundColor: '#ede9d9',
+        backgroundColor: "#ede9d9",
       },
       innerStyles: {},
     },
   };
-
   const desktopWidths = {
     bsky: {
       outerStyles: {},
@@ -102,15 +101,15 @@ export const WindowView = ({
       outerStyles: {},
       innerStyles: {
         width: "350px",
-        backgroundColor: '#ede9d9',
+        backgroundColor: "#ede9d9",
       },
     },
     status: {
       outerStyles: {},
       innerStyles: {
         width: "375px",
-        height: '380px',
-        backgroundColor: '#f9f8f4',
+        height: "380px",
+        backgroundColor: "#f9f8f4",
       },
     },
     photos: {
@@ -141,7 +140,7 @@ export const WindowView = ({
       outerStyles: {},
       innerStyles: {
         width: "350px",
-        backgroundColor: '#ede9d9',
+        backgroundColor: "#ede9d9",
       },
     },
   };
@@ -285,6 +284,8 @@ export const WindowView = ({
     </button>
   );
 
+  const headingId = `${view}-heading`;
+
   return (
     <div
       id={id}
@@ -297,11 +298,17 @@ export const WindowView = ({
       onClick={() => {
         bringToFront(id);
       }}
+      tabIndex={-1}
+      aria-labelledby={headingId}
     >
       <div className="window">
         <div className="window-header">
           <div className="window-draggable-div" ref={draggableElemRef}>
-            <h1 className="window-title" style={{ userSelect: "none" }}>
+            <h1
+              className="window-title"
+              id={headingId}
+              style={{ userSelect: "none" }}
+            >
               {title}
             </h1>
           </div>
@@ -309,10 +316,7 @@ export const WindowView = ({
             <WindowCloseButton />
           </div>
         </div>
-        <div
-          className="window-inner"
-          style={{ ...sizes[view].innerStyles }}
-        >
+        <div className="window-inner" style={{ ...sizes[view].innerStyles }}>
           <div className="window-inner-scroll">{contents}</div>
         </div>
       </div>

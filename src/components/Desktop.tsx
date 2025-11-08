@@ -103,7 +103,10 @@ export const Desktop = ({
                     key={id}
                     id={id}
                     contents={childWindows[id].windowContents}
-                    onClose={() => hideWindow(id)}
+                    onClose={() => {
+                      hideWindow(id)
+                      document.getElementById(`button-${id}`)?.focus();
+                    }}
                     total={visibleWindowIds.length}
                     title={childWindows[id].title}
                     view={childWindows[id].view}

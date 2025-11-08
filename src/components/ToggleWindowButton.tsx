@@ -37,6 +37,7 @@ export const ToggleWindowButton = ({
       className="toggle-button"
       onClick={handleClick}
       aria-pressed={isToggled}
+      id={`button-${id}`}
     >
       {icon}
       <span>{title}</span>
