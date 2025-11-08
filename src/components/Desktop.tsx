@@ -82,25 +82,34 @@ export const Desktop = ({
       >
         <main className="draggable-area">
           <div className="desktop-content">
-            <div className="desktop-buttons">
-              {Object.values(childWindows).map((props) => (
-                <ToggleWindowButton key={props.id} {...props} />
-              ))}
+            <div className="desktop-buttons-start">
+              {Object.values(childWindows)
+                .filter((window) => window.position === "start")
+                .map((props) => (
+                  <ToggleWindowButton key={props.id} {...props} />
+                ))}
+            </div>
+            <div className="desktop-buttons-end">
+              {Object.values(childWindows)
+                .filter((window) => window.position === "end")
+                .map((props) => (
+                  <ToggleWindowButton key={props.id} {...props} />
+                ))}
             </div>
             <div className="desktop-window-area">
-          {visibleWindowIds[0] &&
-            visibleWindowIds?.map((id) => (
-              <WindowView
-                key={id}
-                id={id}
-                contents={childWindows[id].windowContents}
-                onClose={() => hideWindow(id)}
-                total={visibleWindowIds.length}
-                title={childWindows[id].title}
-                view={childWindows[id].view}
-                isMobile={isMobile}
-              />
-            ))}
+              {visibleWindowIds[0] &&
+                visibleWindowIds?.map((id) => (
+                  <WindowView
+                    key={id}
+                    id={id}
+                    contents={childWindows[id].windowContents}
+                    onClose={() => hideWindow(id)}
+                    total={visibleWindowIds.length}
+                    title={childWindows[id].title}
+                    view={childWindows[id].view}
+                    isMobile={isMobile}
+                  />
+                ))}
             </div>
           </div>
         </main>

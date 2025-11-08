@@ -2,7 +2,7 @@ import React, { type CSSProperties, useContext, useRef } from "react";
 import { CloseIcon } from "../Icons";
 import { DesktopContext } from "../DesktopContext";
 
-export type ViewType = "bsky" | "email" | "status" | "photos" | "blog";
+export type ViewType = "bsky" | "email" | "status" | "photos" | "blog" | "bin";
 
 const clamp = (value: number, min: number, max: number) => {
   if (value < min) return min;
@@ -29,38 +29,62 @@ export const WindowView = ({
   total: initialActiveWindowCount,
   isMobile,
 }: IWindowViewProps) => {
+  const mobilePosition = {
+    position: 'absolute' as const,
+    top: '10px',
+    left: 0,
+    right: 0,
+  }
   const mobileWidths = {
     bsky: {
-      outterStyles: {},
+      outerStyles: {
+        ...mobilePosition
+      },
       innerStyles: {},
     },
     email: {
-      outterStyles: {
+      outerStyles: {
+        ...mobilePosition,
         width: "100%",
         maxWidth: "97vw",
+        backgroundColor: '#ede9d9',
       },
       innerStyles: {},
     },
     status: {
-      outterStyles: {
+      outerStyles: {
+        ...mobilePosition,
         width: "100%",
         maxWidth: "97vw",
+        backgroundColor: '#f9f8f4',
+        height: "97%",
       },
       innerStyles: {},
     },
     photos: {
-      outterStyles: {
+      outerStyles: {
+        ...mobilePosition,
         width: "100%",
         maxWidth: "97vw",
-        height: '97%',
+        height: "97%",
       },
       innerStyles: {},
     },
     blog: {
-      outterStyles: {
+      outerStyles: {
+        ...mobilePosition,
         width: "100%",
         maxWidth: "97vw",
-        height: '97%',
+        height: "97%",
+      },
+      innerStyles: {},
+    },
+    bin: {
+      outerStyles: {
+        ...mobilePosition,
+        width: "100%",
+        maxWidth: "97vw",
+        backgroundColor: '#ede9d9',
       },
       innerStyles: {},
     },
@@ -68,47 +92,56 @@ export const WindowView = ({
 
   const desktopWidths = {
     bsky: {
-      outterStyles: {},
+      outerStyles: {},
       innerStyles: {
         width: "500px",
         maxHeight: "700px",
       },
     },
     email: {
-      outterStyles: {},
+      outerStyles: {},
       innerStyles: {
         width: "350px",
+        backgroundColor: '#ede9d9',
       },
     },
     status: {
-      outterStyles: {},
+      outerStyles: {},
       innerStyles: {
         width: "375px",
-        maxHeight: "600px",
+        height: '380px',
+        backgroundColor: '#f9f8f4',
       },
     },
     photos: {
-      outterStyles: {
-        width: '100%',
-        maxWidth: '1000px',
-        height: '100%',
+      outerStyles: {
+        width: "80%",
+        maxWidth: "1000px",
+        height: "100%",
         maxHeight: "70vh",
       },
       innerStyles: {
-        width: '100%',
-        height: '100%',
+        width: "100%",
+        height: "100%",
       },
     },
     blog: {
-      outterStyles: {
-        width: '100%',
-        maxWidth: '600px',
-        height: '100%',
+      outerStyles: {
+        width: "100%",
+        maxWidth: "600px",
+        height: "100%",
         maxHeight: "70vh",
       },
       innerStyles: {
-        width: '100%',
-        height: '100%',
+        width: "100%",
+        height: "100%",
+      },
+    },
+    bin: {
+      outerStyles: {},
+      innerStyles: {
+        width: "350px",
+        backgroundColor: '#ede9d9',
       },
     },
   };
@@ -146,43 +179,6 @@ export const WindowView = ({
   } else {
     sizes = desktopWidths;
   }
-
-  // TODO: clean this up, move
-  const views = {
-    bsky: {
-      outterStyles: {},
-      innerStyles: {
-        backgroundImage:
-          "linear-gradient( 90deg, rgba(71, 71, 71, 0.1), rgba(71, 71, 71, 0.1) ), url('./images/dithered-sky.png')",
-      },
-    },
-    email: {
-      outterStyles: {},
-      innerStyles: {
-        backgroundColor: "white",
-        height: "auto",
-      },
-    },
-    status: {
-      outterStyles: {},
-      innerStyles: {
-        backgroundColor: "white",
-        height: "380px",
-      },
-    },
-    photos: {
-      outterStyles: {},
-      innerStyles: {},
-    },
-    blog: {
-      outterStyles: {
-        height: "100%",
-      },
-      innerStyles: {
-        backgroundColor: "white",
-      },
-    },
-  };
 
   React.useEffect(() => {
     const windowElem = windowElemRef.current;
@@ -294,7 +290,10 @@ export const WindowView = ({
       id={id}
       className="window-outer"
       ref={windowElemRef}
-      style={{ ...position, ...views[view].outterStyles, ...sizes[view].outterStyles}}
+      style={{
+        ...position,
+        ...sizes[view].outerStyles,
+      }}
       onClick={() => {
         bringToFront(id);
       }}
@@ -312,7 +311,7 @@ export const WindowView = ({
         </div>
         <div
           className="window-inner"
-          style={{ ...views[view].innerStyles, ...sizes[view].innerStyles }}
+          style={{ ...sizes[view].innerStyles }}
         >
           <div className="window-inner-scroll">{contents}</div>
         </div>

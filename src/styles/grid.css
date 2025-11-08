@@ -1,14 +1,15 @@
 .grid-wrapper {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #a07ea0;
+  border-right: 1px solid rgb(145, 155, 156);
   background-color: #b9d3c6;
   box-sizing: content-box;
   position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
 .jump-to {
-  position: sticky;
   display: flex;
   top: 0px;
   font-size: 0.8rem;
@@ -16,28 +17,21 @@
 }
 
 .jump-to > div {
+  background-color: rgb(237, 233, 217);
   display: flex;
-  background-color: white;
-  border-bottom: 1px dotted #a07ea0;
-  border-right: 1px dotted #a07ea0;
-  padding: 2px 5px;
-  border-bottom-right-radius: 4px;
+  width: 100%;
+  padding: 4px 6px;
+  border-bottom: 1px solid rgb(145, 155, 156);
 }
 
 .notes {
-  position: sticky;
-  bottom: 0px;
   display: flex;
   justify-content: flex-end;
-}
-
-.notes > span {
-  padding: 2px 5px;
+  background-color: rgb(237, 233, 217);
+  width: 100%;
+  border-top: 1px solid rgb(145, 155, 156);
   font-size: 0.8rem;
-  background-color: white;
-  border-top: 1px dotted #a07ea0;
-  border-left: 1px dotted #a07ea0;
-  border-top-left-radius: 4px;
+  padding: 4px 6px;
 }
 
 .jump-to ul {

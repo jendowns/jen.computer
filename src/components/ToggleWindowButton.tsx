@@ -8,6 +8,7 @@ export interface IToggleWindowButtonProps {
   title: string;
   icon: React.ReactNode;
   view: ViewType;
+  position: 'start' | 'end'
 }
 
 export const ToggleWindowButton = ({

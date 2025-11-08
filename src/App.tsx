@@ -5,6 +5,7 @@ import { CurrentStatus } from "./components/windows/CurrentStatus";
 import { Desktop } from "./components/Desktop";
 import { Interstitial } from "./components/Interstitial";
 import PhotoBlog from "./components/windows/PhotoBlog";
+import { Recyclebin } from "./components/windows/RecycleBin";
 
 export default function Homepage() {
   return (
@@ -13,10 +14,11 @@ export default function Homepage() {
         childWindows={{
           status: {
             id: "status",
-            title: "current status",
+            title: "now.txt",
             view: "status",
             windowContents: <CurrentStatus />,
-            icon: <img src="./images/winxp-star.png" alt="star icon" />,
+            icon: <img src="./images/txt.png" alt="" />,
+            position: 'start',
           },
           // bsky: {
           //   id: "bsky",
@@ -30,14 +32,16 @@ export default function Homepage() {
             title: "email me",
             view: "email",
             windowContents: <EmailMe />,
-            icon: <img src="./images/winxp-globe.png" alt="globe icon" />,
+            icon: <img src="./images/email.png" alt="globe icon" />,
+            position: 'start',
           },
           photos: {
             id: "photos",
             title: "travel photos",
             view: "photos",
             windowContents: <PhotoBlog />,
-            icon: <img src="./images/winxp-camera.png" alt="camera icon" />,
+            icon: <img src="./images/camera.png" alt="camera icon" />,
+            position: 'start',
           },
           blog: {
             id: "blog",
@@ -45,6 +49,15 @@ export default function Homepage() {
             view: "blog",
             windowContents: <Blog />,
             icon: <img src="./images/huh.jpg" alt="favicon for my blog website, jen.dev" />,
+            position: 'start',
+          },
+          bin: {
+            id: "bin",
+            title: "recycle bin",
+            view: "bin",
+            windowContents: <Recyclebin />,
+            icon: <img src="./images/recycle.png" alt="recycle bin icon" />,
+            position: 'end',
           },
         }}
       />
