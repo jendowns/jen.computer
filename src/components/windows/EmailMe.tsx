@@ -1,4 +1,3 @@
-import React from "react";
 import { VideoLoop } from "../VideoLoop";
 
 export const EmailMe = () => {

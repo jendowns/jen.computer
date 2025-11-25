@@ -1,17 +1,14 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import React from "react";
+import React  from "react";
 import { Recyclebin } from "./windows/RecycleBin";
 import { Blog } from "./windows/Blog";
 import { EmailMe } from "./windows/EmailMe";
 import { CurrentStatus } from "./windows/CurrentStatus";
-import BskyFeed from "./windows/BskyFeed";
-import { ButterflyIcon } from "./Icons";
 import { Help } from "./windows/Help";
 import { Menu } from "./menu/Menu";
 import { Weirdweb } from "./windows/WeirdWeb";
 
 export type ViewType =
-  | "bsky"
   | "email"
   | "status"
   | "blog"
@@ -58,9 +55,6 @@ export const DesktopContext = React.createContext<IDesktopContext>({
   bringToFront: () => {},
   isMobile: false,
   allWindows: {
-    bsky: {
-      id: "bsky",
-    },
     email: {
       id: "email",
     },
@@ -138,23 +132,22 @@ export const DesktopProvider = ({
         },
       },
     },
-    bsky: {
-      id: "bsky" as const,
-      title: "my bsky posts",
-      windowContents: <BskyFeed />,
-      icon: <ButterflyIcon />,
-      desktopStyles: {
-        outerStyles: {},
-        innerStyles: {
-          width: "500px",
-          maxHeight: "700px",
-        },
-      },
-      mobileStyles: {
-        outerStyles: {},
-        innerStyles: {},
-      },
-    },
+    //   id: "bsky" as const,
+    //   title: "my bsky posts",
+    //   windowContents: <BskyFeed />,
+    //   icon: <ButterflyIcon />,
+    //   desktopStyles: {
+    //     outerStyles: {},
+    //     innerStyles: {
+    //       width: "500px",
+    //       maxHeight: "700px",
+    //     },
+    //   },
+    //   mobileStyles: {
+    //     outerStyles: {},
+    //     innerStyles: {},
+    //   },
+    // },
     email: {
       id: "email" as const,
       title: "e-mail me",
