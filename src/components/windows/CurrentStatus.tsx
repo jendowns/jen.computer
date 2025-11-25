@@ -31,6 +31,7 @@ export const CurrentStatus = () => (
       flexDirection: "column",
       gap: "24px",
       padding: "24px",
+      backgroundColor: "#f9f8f4"
     }}
   >
     <List
@@ -39,7 +40,10 @@ export const CurrentStatus = () => (
         <span>
           particpating in <a href="https://weird.jen.dev">Weird Web October</a>
         </span>,
-        <span>redesigning my blog while simultaneously trying different things with *this* website too</span>
+        <span>
+          redesigning my blog while simultaneously trying different things with
+          *this* website too
+        </span>,
       ]}
     />
     <List
