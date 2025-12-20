@@ -35,14 +35,23 @@ export const CurrentStatus = () => (
     }}
   >
     <List
+      date="Winter 2025/2026"
+      items={[
+        <span>baby-proofing my apartment</span>,
+        <span>
+          redesigning my blog
+        </span>,
+        <span>trying to stay warm</span>
+      ]}
+    />
+    <List
       date="Fall 2025"
       items={[
         <span>
           particpating in <a href="https://weird.jen.dev">Weird Web October</a>
         </span>,
         <span>
-          redesigning my blog while simultaneously trying different things with
-          *this* website too
+          refactoring this website
         </span>,
       ]}
     />

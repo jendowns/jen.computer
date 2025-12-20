@@ -28,13 +28,13 @@ export const WindowView = ({
   isMobile,
 }: IWindowViewProps) => {
 
-  const { bringToFront, allWindows } = useContext(DesktopContext);
+  const { bringToFront, allWindows, visibleWindowIds } = useContext(DesktopContext);
   const windowElemRef = useRef<HTMLDivElement>(null);
   const draggableElemRef = useRef<HTMLDivElement>(null);
 
   const [position, setPosition] = React.useState<CSSProperties>({
     top: initialActiveWindowCount * 20,
-    left: `${initialActiveWindowCount * 5}%`,
+    left: visibleWindowIds.length === 1 ? '15%' : `${initialActiveWindowCount * 15}%`,
   });
 
   React.useEffect(() => {
@@ -47,7 +47,7 @@ export const WindowView = ({
     } else {
       newPosition = {
         top: initialActiveWindowCount * 20,
-        left: `${initialActiveWindowCount * 5}%`,
+        left: visibleWindowIds.length === 1 ? '15%' : `${initialActiveWindowCount * 5}%`,
       };
     }
     setPosition(newPosition);

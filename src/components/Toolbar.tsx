@@ -22,7 +22,7 @@ export const Toolbar = () => {
 
   return (
     <div className="toolbar">
-      <ToggleWindowButton id="menu" className="toolbar-segment">
+      <ToggleWindowButton id="menu" key="menu" className="toolbar-segment">
         <span>start</span>
       </ToggleWindowButton>
       <div className="toolbar-segment">

@@ -61,22 +61,6 @@ export const RepostIcon = () => (
   </div>
 );
 
-export const PlayIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    aria-hidden
-  >
-    {/* Icon from Pixelarticons by Gerrit Halfmann - https://github.com/halfmage/pixelarticons/blob/master/LICENSE */}
-    <path
-      fill="currentColor"
-      d="M2 5h14v4h2V7h2V5h2v14h-2v-2h-2v-2h-2v4H2zm2 12h10V7H4z"
-    />
-  </svg>
-);
-
 export const AppleIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -381,5 +365,89 @@ export const LoadingIcon = () => (
         values="0;2;0;0"
       />
     </circle>
+  </svg>
+);
+
+export const PlayIcon = () => (
+  <span className="play-icon" aria-label="play audio">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      {/* <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ --> */}
+      <path
+        fill="currentColor"
+        d="M22 11v2h-1v1h-1v1h-2v1h-2v1h-1v1h-2v1h-2v1h-1v1H8v1H6v1H3v-1H2V2h1V1h3v1h2v1h2v1h1v1h2v1h2v1h1v1h2v1h2v1h1v1z"
+      />
+    </svg>
+  </span>
+);
+
+export const PauseIcon = () => (
+  <span aria-label="pause audio" className="pause-icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      {/* <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ --> */}
+      <path
+        fill="currentColor"
+        d="M23 2v20h-1v1h-7v-1h-1V2h1V1h7v1zM9 2h1v20H9v1H2v-1H1V2h1V1h7z"
+      />
+    </svg>
+  </span>
+);
+
+export const PrevSongIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    {/* <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ --> */}
+    <path
+      fill="currentColor"
+      d="M17 5v2h-1v1h-1v1h-1v1h-1v1h-1v2h1v1h1v1h1v1h1v1h1v2h-1v1h-2v-1h-1v-1h-1v-1h-1v-1h-1v-1H9v-1H8v-1H7v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h2v1z"
+    />
+  </svg>
+);
+
+export const NextSongIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    style={{ transform: "rotate(180deg)" }}
+  >
+    {/* <!-- Icon from Pixel Icon by HackerNoon - https://creativecommons.org/licenses/by/4.0/ --> */}
+    <path
+      fill="currentColor"
+      d="M17 5v2h-1v1h-1v1h-1v1h-1v1h-1v2h1v1h1v1h1v1h1v1h1v2h-1v1h-2v-1h-1v-1h-1v-1h-1v-1h-1v-1H9v-1H8v-1H7v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h2v1z"
+    />
+  </svg>
+);
+
+export const MusicIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    aria-hidden="true"
+  >
+    {/* <!-- Icon from Dinkie Icons by atelierAnchor - https://github.com/atelier-anchor/dinkie-icons/blob/main/LICENSE --> */}
+    <path
+      fill="currentColor"
+      d="M0 12h3v-1h1V5h2V4h3v4H7v1h1v1H7V9H6v2h3v-1h1V1H7v1H3v7H1v1h1v1H1v-1H0Zm0 0"
+    />
   </svg>
 );

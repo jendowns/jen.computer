@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import React  from "react";
+import React from "react";
 import { Recyclebin } from "./windows/RecycleBin";
 import { Blog } from "./windows/Blog";
 import { EmailMe } from "./windows/EmailMe";
@@ -7,6 +7,7 @@ import { CurrentStatus } from "./windows/CurrentStatus";
 import { Help } from "./windows/Help";
 import { Menu } from "./menu/Menu";
 import { Weirdweb } from "./windows/WeirdWeb";
+import { AudioPlayer } from "./windows/AudioPlayer";
 
 export type ViewType =
   | "email"
@@ -15,7 +16,8 @@ export type ViewType =
   | "bin"
   | "help"
   | "menu"
-  | "weird";
+  | "weird"
+  | "audioplayer";
 
 export interface IDesktopContext {
   visibleWindowIds: ViewType[];
@@ -76,6 +78,9 @@ export const DesktopContext = React.createContext<IDesktopContext>({
     weird: {
       id: "weird",
     },
+    audioplayer: {
+      id: "audioplayer",
+    },
   },
   desktopWindowIds: [],
   menuIds: [],
@@ -86,12 +91,18 @@ export const DesktopProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [visibleWindowIds, setVisibleWindowIds] = React.useState<ViewType[]>(
-    []
-  );
+  const [visibleWindowIds, setVisibleWindowIds] = React.useState<ViewType[]>([
+    "audioplayer",
+  ]);
   const [isMobile, setIsMobile] = React.useState(false);
 
-  const desktopWindowIds: ViewType[] = ["status", "blog", "weird", "bin"];
+  const desktopWindowIds: ViewType[] = [
+    "status",
+    "blog",
+    "weird",
+    "audioplayer",
+    "bin",
+  ];
   const menuIds: ViewType[] = ["menu"];
 
   const mobilePosition = {
@@ -301,6 +312,34 @@ export const DesktopProvider = ({
           width: "100%",
           maxWidth: "97vw",
           height: "97%",
+        },
+        innerStyles: {},
+      },
+    },
+    audioplayer: {
+      id: "audioplayer" as const,
+      title: "Sonic Adventure OST",
+      windowContents: <AudioPlayer />,
+      icon: (
+        <img
+          src="https://res.cloudinary.com/jendowns/image/upload/v1765008063/jen.computer/images/cd.png"
+          alt="CD icon with a music note"
+        />
+      ),
+      position: "start" as const,
+      desktopStyles: {
+        outerStyles: {},
+        innerStyles: {
+          width: "300px",
+          backgroundColor: "#ede9d9",
+        },
+      },
+      mobileStyles: {
+        outerStyles: {
+          ...mobilePosition,
+          width: "100%",
+          maxWidth: "97vw",
+          backgroundColor: "#ede9d9",
         },
         innerStyles: {},
       },
