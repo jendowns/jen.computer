@@ -28,7 +28,7 @@ export const AudioPlayer = () => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   const pathStart =
-    "https://res.cloudinary.com/jendowns/raw/upload/v1766211356";
+    "https://res.cloudinary.com/jendowns/raw/upload/v1770500406";
   const pathEnd = "/jen.computer/jams/songs.json";
 
   React.useEffect(() => {
