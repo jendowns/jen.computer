@@ -41,7 +41,8 @@ export const CurrentStatus = () => (
         <span>
           redesigning my blog
         </span>,
-        <span>trying to stay warm</span>
+        <span>trying to stay warm</span>,
+        <span>writing and editing on Wikipedia (like, actually)</span>
       ]}
     />
     <List

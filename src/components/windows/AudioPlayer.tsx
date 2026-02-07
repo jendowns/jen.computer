@@ -176,7 +176,7 @@ export const AudioPlayer = () => {
           </li>
         ))}
       </ul>
-      <p>
+      <p style={{ lineHeight: '1rem' }}>
         <small
           style={{
             fontSize: "0.6rem",
@@ -184,7 +184,7 @@ export const AudioPlayer = () => {
             textShadow: "1px 1px white",
           }}
         >
-          Music from {album}, &copy;{owner}
+          Music from <em>{album}</em><br/>&copy; {owner}
         </small>
       </p>
     </div>

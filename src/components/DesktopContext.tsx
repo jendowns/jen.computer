@@ -318,7 +318,7 @@ export const DesktopProvider = ({
     },
     audioplayer: {
       id: "audioplayer" as const,
-      title: "Sonic Adventure OST",
+      title: "chill tunes",
       windowContents: <AudioPlayer />,
       icon: (
         <img
